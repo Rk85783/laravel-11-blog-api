@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -10,3 +11,6 @@ Route::get('/user', function (Request $request) {
 Route::get('/test', function () {
     return ['name' => "Rohit Kumar Mahor", 'channel' => "Mr. Kumar - Coding"];
 });
+
+Route::get('students', [StudentController::class, 'list']);
+Route::post('add', [StudentController::class, 'addStudent']);
