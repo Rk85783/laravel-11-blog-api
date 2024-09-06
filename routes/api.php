@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StudentController;
+use App\Http\Controllers\MemberController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,5 @@ Route::put('update-student', [StudentController::class, 'updateStudent']);
 Route::delete('delete-student/{id}', [StudentController::class, 'deleteStudent']);
 
 Route::get('search-student/{name}', [StudentController::class, 'searchStudent']);
+
+Route::resource('member', MemberController::class);
